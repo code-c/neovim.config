@@ -1,6 +1,6 @@
--- [[ My Config: Started from kickstart.nvim nvim ]]
+-- [[ My Config: Started from kickstart.nvim ]]
 
-require('core.keymaps')
+require('keymaps')
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
@@ -18,7 +18,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('load-plugins')
+require("lazy").setup("plugins")
 
 -- [[ Setting options ]]
 -- See `:help vim.o`

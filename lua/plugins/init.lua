@@ -1,12 +1,5 @@
--- [[ Configure plugins ]]
--- NOTE: Here is where you install your plugins.
--- You can configure plugins using the `config` key.
---
--- You can also configure plugins after the setup call,
--- as they will be available in your neovim runtime.
-require('lazy').setup({
-
-  -- Git related plugins
+ return {
+-- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
@@ -19,17 +12,11 @@ require('lazy').setup({
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim',   opts = {} },
 
-  -- show the file tree for a given directory
-  { 'nvim-tree/nvim-tree.lua', opts = {} },
-
-  require 'core.plugins.autocmp',
-  require 'core.plugins.autoformat',
-  require 'core.plugins.debug',
-  require 'core.plugins.gitsigns',
-  require 'core.plugins.telescope',
-  require 'core.plugins.tree-sitter',
-  require 'core.plugins.mason',
-  require 'core.plugins.catppuccin',
+  -- Tmux plugin for nvim naviation
+  {
+     "christoomey/vim-tmux-navigator",
+     lazy = false,
+  },
 
   {
     -- Set lualine as statusline
@@ -53,5 +40,4 @@ require('lazy').setup({
     main = 'ibl',
     opts = {},
   },
-
-}, {})
+ }
