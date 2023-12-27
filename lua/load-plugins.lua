@@ -29,15 +29,7 @@ require('lazy').setup({
   require 'core.plugins.telescope',
   require 'core.plugins.tree-sitter',
   require 'core.plugins.mason',
-
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
+  require 'core.plugins.catppuccin',
 
   {
     -- Set lualine as statusline
@@ -46,7 +38,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'catppuccin',
         component_separators = '|',
         section_separators = '',
       },
