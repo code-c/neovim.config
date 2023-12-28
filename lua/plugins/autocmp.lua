@@ -1,5 +1,4 @@
 return {
-
   -- Autocompletion
   'hrsh7th/nvim-cmp',
   dependencies = {
@@ -16,8 +15,6 @@ return {
   },
 
   config = function()
-    -- [[ Configure nvim-cmp ]]
-    -- See `:help cmp`
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
     require('luasnip.loaders.from_vscode').lazy_load()

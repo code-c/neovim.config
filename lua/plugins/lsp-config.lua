@@ -1,5 +1,4 @@
 return {
-
   -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
   dependencies = {
@@ -16,7 +15,6 @@ return {
   },
 
   config = function()
-    -- [[ Configure LSP ]]
     --  This function gets run when an LSP connects to a particular buffer.
     local on_attach = function(_, bufnr)
       -- In this case, we create a function that lets us more easily define mappings specific
@@ -81,8 +79,6 @@ return {
     require('mason-lspconfig').setup()
 
     -- Enable the following language servers
-    --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-    --
     --  Add any additional override configuration in the following tables. They will be passed to
     --  the `settings` field of the server config. You must look up that documentation yourself.
     --
@@ -93,15 +89,13 @@ return {
       -- gopls = {},
       -- pyright = {},
       -- rust_analyzer = {},
-      -- tsserver = {},
-      -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
+      tsserver = {},
+      html = { filetypes = { 'html', 'twig', 'hbs'} },
       lua_ls = {
         Lua = {
           workspace = { checkThirdParty = false },
           telemetry = { enable = false },
-          -- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-          -- diagnostics = { disable = { 'missing-fields' } },
+          diagnostics = { disable = { 'missing-fields' } },
         },
       },
     }

@@ -9,6 +9,7 @@ return {
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
   config = function()
+    use_libuv_file_watcher=true
     vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
   end
 }
