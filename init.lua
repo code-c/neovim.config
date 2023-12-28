@@ -22,8 +22,7 @@ vim.opt.rtp:prepend(lazypath)
 -- [[ Install plugins ]]
 -- these are defined in out plugins directory
 -- plugins that dont require setup are set in init.lua
-require("lazy").setup("plugins")
+require("lazy").setup({{import = "plugins"}}, {})
 
 -- [[ Import custom Vim Options ]]
 require('vim-options')
-
