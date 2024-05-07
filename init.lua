@@ -1,5 +1,3 @@
--- [[ My Config: Started from kickstart.nvim ]]
-
 -- [[ Import keymaps ]]
 -- these are ones that are not related to any plugin
 -- defines <leader> key so it must be called first
@@ -22,7 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 -- [[ Install plugins ]]
 -- these are defined in out plugins directory
 -- plugins that dont require setup are set in init.lua
-require("lazy").setup({{import = "plugins"}}, {})
+require("lazy").setup("plugins", {})
 
 -- [[ Import custom Vim Options ]]
 require('vim-options')

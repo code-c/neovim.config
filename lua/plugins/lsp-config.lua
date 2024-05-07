@@ -85,9 +85,18 @@ return {
     --  If you want to override the default filetypes that your language server will attach to you can
     --  define the property 'filetypes' to the map in question.
     local servers = {
+      bashls = {},
       clangd = {},
+      -- hls = {}, -- haskell LS
       pyright = {},
+      arduino_language_server = {},
       tsserver = {},
+      jsonls = {},
+      yamlls = {},
+      taplo = {}, -- toml LS
+      graphql = {},
+      cssls = {},
+      tailwindcss = {},
       html = { filetypes = { 'html', 'twig', 'hbs' } },
       lua_ls = {
         Lua = {
