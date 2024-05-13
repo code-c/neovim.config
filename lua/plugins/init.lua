@@ -1,5 +1,5 @@
- return {
--- Git related plugins
+return {
+  -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
@@ -7,29 +7,15 @@
   'tpope/vim-sleuth',
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',    opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',   opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
 
   -- Tmux plugin for nvim naviation
   {
-     "christoomey/vim-tmux-navigator",
-     lazy = false,
-  },
-
-  {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = true,
-        theme = 'catppuccin',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
   },
 
   {
@@ -40,4 +26,4 @@
     main = 'ibl',
     opts = {},
   },
- }
+}
