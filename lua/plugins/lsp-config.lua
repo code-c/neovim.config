@@ -87,7 +87,6 @@ return {
     local servers = {
       bashls = {},
       clangd = {},
-      -- hls = {}, -- haskell LS
       pyright = {},
       arduino_language_server = {},
       tsserver = {},
