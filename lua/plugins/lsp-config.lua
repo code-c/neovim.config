@@ -7,7 +7,6 @@ return {
     'williamboman/mason-lspconfig.nvim',
 
     -- Useful status updates for LSP
-    -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { 'j-hui/fidget.nvim', opts = {} },
 
     -- Additional lua configuration, makes nvim stuff amazing!
@@ -118,6 +117,7 @@ return {
 
     mason_lspconfig.setup {
       ensure_installed = vim.tbl_keys(servers),
+      automatic_installation = true,
     }
 
     mason_lspconfig.setup_handlers {
@@ -167,8 +167,6 @@ return {
           return
         end
 
-        -- Tsserver usually works poorly. Sorry you work with bad languages
-        -- You can remove this line if you know what you're doing :)
         if client.name == 'tsserver' then
           return
         end
