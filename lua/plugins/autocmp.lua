@@ -1,5 +1,7 @@
+-- [[ Autocomplete Configuration ]]
+-- Use nvim-cmp and Luasnip to arrange for autocomplete
+-- suggestion's with the power of LSP's and snippets
 return {
-  -- Autocompletion
   'hrsh7th/nvim-cmp',
   dependencies = {
     -- Snippet Engine & its associated nvim-cmp source
@@ -64,5 +66,5 @@ return {
         { name = 'path' },
       },
     }
-  end
+  end,
 }

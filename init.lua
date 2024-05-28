@@ -1,7 +1,8 @@
 -- [[ Import keymaps ]]
--- these are ones that are not related to any plugin
--- defines <leader> key so it must be called first
-require('keymaps')
+-- defines <leader> key and other keymaps
+-- which should not be related to any plugins.
+-- it must be called first to avoid setting a wrong leaderkey
+require 'keymaps'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -18,9 +19,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- [[ Install plugins ]]
--- these are defined in out plugins directory
--- plugins that dont require setup are set in init.lua
-require("lazy").setup("plugins", {})
+-- these are defined in the plugins directory
+require('lazy').setup('plugins', {})
 
--- [[ Import custom Vim Options ]]
-require('vim-options')
+-- [[ Vim Options ]]
+-- add custom vim options set in separate file in the Lua dir.
+require 'vim-options'
