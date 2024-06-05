@@ -1,3 +1,6 @@
+-- [[ Language Server Configuration ]]
+-- Uses nvim-lsp-config and mason as workhorse's
+-- sets up plugins that assist or use the LSP's
 return {
   -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
@@ -36,7 +39,7 @@ return {
       nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
       nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
-      -- See `:help K` for why this keymap
+      -- See `:help K` to learn about this keymapK
       nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
       nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
@@ -134,7 +137,7 @@ return {
     -- autoformat.lua
     -- Switch for controlling whether you want autoformatting.
     local format_is_enabled = true
-    vim.api.nvim_create_user_command('KickstartFormatToggle', function()
+    vim.api.nvim_create_user_command('CustomFormatToggle', function()
       format_is_enabled = not format_is_enabled
       print('Setting autoformatting to: ' .. tostring(format_is_enabled))
     end, {})
@@ -145,7 +148,7 @@ return {
     local _augroups = {}
     local get_augroup = function(client)
       if not _augroups[client.id] then
-        local group_name = 'kickstart-lsp-format-' .. client.name
+        local group_name = 'custom-lsp-format-' .. client.name
         local id = vim.api.nvim_create_augroup(group_name, { clear = true })
         _augroups[client.id] = id
       end
@@ -155,7 +158,7 @@ return {
 
     -- Whenever an LSP attaches to a buffer, we will run this function.
     vim.api.nvim_create_autocmd('LspAttach', {
-      group = vim.api.nvim_create_augroup('kickstart-lsp-attach-format', { clear = true }),
+      group = vim.api.nvim_create_augroup('custom-lsp-attach-format', { clear = true }),
       -- This is where we attach the autoformatting for reasonable clients
       callback = function(args)
         local client_id = args.data.client_id

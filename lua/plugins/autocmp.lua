@@ -1,6 +1,4 @@
 -- [[ Autocomplete Configuration ]]
--- Use nvim-cmp and Luasnip to arrange for autocomplete
--- suggestion's with the power of LSP's and snippets
 return {
   'hrsh7th/nvim-cmp',
   dependencies = {
@@ -9,7 +7,7 @@ return {
     'saadparwaiz1/cmp_luasnip',
 
     -- Adds LSP completion capabilities
-    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-nvim-lsp', --asks for completions from LSP in current buffers
     'hrsh7th/cmp-path',
 
     -- Adds a number of user-friendly snippets
@@ -19,7 +17,7 @@ return {
   config = function()
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
-    require('luasnip.loaders.from_vscode').lazy_load()
+    require('luasnip.loaders.from_vscode').lazy_load() -- friendly snippets
     luasnip.config.setup {}
 
     cmp.setup {
@@ -29,7 +27,7 @@ return {
         end,
       },
       completion = {
-        completeopt = 'menu,menuone,noinsert',
+        completeopt = 'menu,menuone,noinsert,noselect',
       },
       mapping = cmp.mapping.preset.insert {
         ['<C-n>'] = cmp.mapping.select_next_item(),
