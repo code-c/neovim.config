@@ -91,7 +91,10 @@ return {
       clangd = {},
       pyright = {},
       arduino_language_server = {},
-      tsserver = {},
+      tsserver = {
+        filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
+        cmd = { 'typescript-language-server', '--stdio' },
+      },
       jsonls = {},
       yamlls = {},
       taplo = {}, -- toml LS
@@ -170,9 +173,9 @@ return {
           return
         end
 
-        if client.name == 'tsserver' then
-          return
-        end
+        --if client.name == 'tsserver' then
+        --  return
+        --end
 
         -- Create an autocmd that will run *before* we save the buffer.
         --  Run the formatting command for the LSP that has just attached.

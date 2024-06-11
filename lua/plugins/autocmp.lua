@@ -9,6 +9,7 @@ return {
     -- Adds LSP completion capabilities
     'hrsh7th/cmp-nvim-lsp', --asks for completions from LSP in current buffers
     'hrsh7th/cmp-path',
+    'hrsh7th/cmp-buffer',
 
     -- Adds a number of user-friendly snippets
     'rafamadriz/friendly-snippets',
@@ -17,6 +18,7 @@ return {
   config = function()
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
+    luasnip.filetype_extend('typescript', { 'javascript' })
     require('luasnip.loaders.from_vscode').lazy_load() -- friendly snippets
     luasnip.config.setup {}
 
@@ -62,6 +64,7 @@ return {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
+        { name = 'buffer' },
       },
     }
   end,
