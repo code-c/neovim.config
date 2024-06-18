@@ -92,7 +92,7 @@ return {
       pyright = {},
       arduino_language_server = {},
       tsserver = {
-        filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx' },
+        filetypes = { 'typescript', 'typescriptreact', 'tsx' },
         cmd = { 'typescript-language-server', '--stdio' },
       },
       jsonls = {},
