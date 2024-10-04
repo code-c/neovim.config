@@ -91,7 +91,7 @@ return {
       clangd = {},
       pyright = {},
       arduino_language_server = {},
-      tsserver = {
+      ts_ls = {
         filetypes = { 'typescript', 'typescriptreact', 'tsx' },
         cmd = { 'typescript-language-server', '--stdio' },
       },
